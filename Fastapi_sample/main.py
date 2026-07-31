@@ -15,7 +15,7 @@ ACCESS_TOKEN_EXPIRE_MINUTES = 30
 
 db = {
     "tim": {
-        "   username": "tim",
+        "username": "tim",
         "full_name": "TimRusscia",
         "email": "tim@gmail.com",
         "hashed_password": "$2b$12$M9gFgEnfuZONJ7I46RcSGONfjMPZCBVbU5k3EY39FaYHjdwuPpp6q",
@@ -105,8 +105,6 @@ async def read_users_me(current_user: User = Depends(get_current_active_user)):
 @app.get("users/me/items")
 async  def read_own_items(current_user: User = Depends(get_current_active_user)):
     return [{"item_id": 1, "owner": current_user}]
-
-
 # pwd = get_password_hash("tim1234")
 # print(pwd)
 
