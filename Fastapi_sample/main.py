@@ -4,8 +4,12 @@ from pydantic import BaseModel
 from datetime import datetime, timedelta
 from jose import JWTError, jwt 
 from passlib.context import CryptContext
+import os
 
-SECRET_KEY = "83daa0256a2289b0fb23693bf1f6034d44396675749244721a2b20e896e11662"
+# SECRET_KEY = "83daa0256a2289b0fb23693bf1f6034d44396675749244721a2b20e896e11662"
+SECRET_KEY = os.getenv("apikey")
+if not SECRET_KEY:
+    raise RuntimeError("apikey environment variable is not set")
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 30
 
@@ -105,13 +109,6 @@ async  def read_own_items(current_user: User = Depends(get_current_active_user))
 
 # pwd = get_password_hash("tim1234")
 # print(pwd)
-
-
-
-
-
-
-
 
 # fake_db = {
 #     "pwd_policy_setup": {
