@@ -25,8 +25,9 @@ db = {
         "username": "tim",
         "full_name": "TimRusscia",
         "email": "tim@gmail.com",
-        "hashed_password": "$2b$12$M9gFgEnfuZONJ7I46RcSGONfjMPZCBVbU5k3EY39FaYHjdwuPpp6q",
         "disabled": False
+        "hashed_password": "$2b$12$M9gFgEnfuZONJ7I46RcSGONfjMPZCBVbU5k3EY39FaYHjdwuPpp6q",
+        "current_passowrd": "Tim@123"
     }
 }
 
